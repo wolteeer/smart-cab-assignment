@@ -7,6 +7,8 @@ env = gym.make("Taxi-v3").env  # set game environment
 
 frames = []  # for animation
 
+trained_frames = []
+
 q_table = np.zeros([env.observation_space.n, env.action_space.n])  # q-table with zero's
 
 
@@ -115,7 +117,7 @@ def evaluate_agent():
             if reward == -10:
                 penalties += 1
 
-            frames.append({
+            trained_frames.append({
                 'frame': env.render(mode='ansi'),
                 'state': state,
                 'action': action,
@@ -133,6 +135,35 @@ def evaluate_agent():
     print("Average penalties per episode: %s" % (total_penalties / episodes,))
 
 
+def evaluate_agent_on_illustration():
+    env.s = 328  # set environment to illustration's state
+    epochs, epochs, penalties = 0, 0, 0
+
+    done = False
+
+    state = env.s
+
+    while not done:
+        action = np.argmax(q_table[state])
+        state, reward, done, info = env.step(action)
+
+        if reward == -10:
+            penalties += 1
+
+        trained_frames.append({
+            'frame': env.render(mode='ansi'),
+            'state': state,
+            'action': action,
+            'reward': reward
+        }
+        )
+
+        epochs += 1
+
+    print("Average timesteps per episode: %s" % (epochs))
+    print("Average penalties per episode: %s" % (penalties))
+
+
 # manipulate_env(3, 1, 2, 0) try it out
 
 # brute_force_smart_cab() -> uncomment next line for visual result.
@@ -142,4 +173,5 @@ dqn_train()
 
 # q_table[328]  # check which move is suggested by the q-table, in the illustration state.
 
-evaluate_agent()
+# evaluate_agent_on_illustration()
+# print_frames(trained_frames)
