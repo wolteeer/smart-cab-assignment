@@ -1,11 +1,11 @@
-#SmartCab
+# SmartCab
 
-##Structure
+## Structure
 + Assignment: contains the actual assignment. 
 + CartPole: An example of gym.openai combined with DQN. Runnable and trainable.
 + main.py: skeleton for the assignment, here you can adjust code. 
 
-##Game
+## Game
 ![alt text](https://storage.googleapis.com/lds-media/images/Reinforcement_Learning_Taxi_Env.width-1200.png)
 
 Let's design a simulation of a self-driving cab: SmartCab. Above you see SmartCab's environment.
@@ -92,16 +92,16 @@ The Q-table is a matrix where we have a row for every state (500) and a column f
 It's first initialized to 0, and then values are updated after training. 
 Note that the Q-table has the same dimensions as the reward table, but it has a completely different purpose.
 
-##Summing up the Q-Learning Process
+## Summing up the Q-Learning Process
 Breaking it down into steps, we get: 
 
-- &#9745; Initialize the Q-table by all zeros. 
-- &#9744; Start exploring actions: For each state, select any one among all possible actions for the current state (S).
-- &#9744; Travel to the next state (S') as a result of that action (a).
-- &#9744; For all possible actions from the state (S') select the one with the highest Q-value.
-- &#9744; Update Q-table values using the equation.
-- &#9744; Set the next state as the current state.
-- &#9744; If goal state is reached, 
+- [x] Initialize the Q-table by all zeros. 
+- [ ] Start exploring actions: For each state, select any one among all possible actions for the current state (S).
+- [ ] Travel to the next state (S') as a result of that action (a).
+- [ ] For all possible actions from the state (S') select the one with the highest Q-value.
+- [ ] Update Q-table values using the equation.
+- [ ] Set the next state as the current state.
+- [ ] If goal state is reached, 
 
 There's a tradeoff between exploration (choosing a random action) and exploitation (choosing actions based on already learned Q-values).
 We want to prevent the action from always taking the same route, and possibly overfitting, 
