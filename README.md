@@ -60,7 +60,7 @@ Better Q-values imply better chances of getting greater rewards.
 Q-values are initialized to an arbitrary value, and as the agent exposes itself to the environment and receives different rewards by executing different actions, 
 the Q-values are updated using the equation:
 
-![alt text](./formula.png)
+![alt text](./assignment/formula.png)
 
 Where:
 
