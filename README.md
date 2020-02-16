@@ -3,7 +3,7 @@
 ## Structure
 + Assignment: contains the actual assignment. 
 + CartPole: An example of gym.openai combined with DQN. Runnable and trainable.
-+ main.py: skeleton for the assignment, here you can adjust code. 
++ ``main.py``: skeleton for the assignment, here you can adjust code. 
 
 ## Game
 ![alt text](https://storage.googleapis.com/lds-media/images/Reinforcement_Learning_Taxi_Env.width-1200.png)
